@@ -10,6 +10,15 @@
                     <h4 class="mb-0">Leave Request Form</h4>
                 </div>
                 <div class="card-body">
+
+                    {{-- Alert sukses jika ada --}}
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
                     <form action="{{ route('leave.store') }}" method="POST">
                         @csrf
                         
